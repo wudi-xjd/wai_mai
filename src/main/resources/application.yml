@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demooo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+mybatis:
+  # mapper 的 xml 文件位置（以后放到 resources/mapper 下）
+  mapper-locations: classpath:mapper/*.xml
+  # 开启驼峰命名映射：数据库 user_name <-> 实体 userName
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: it.pojo
+
+logging:
+  level:
+    it: debug
+
+pagehelper:
+  reasonable: true
