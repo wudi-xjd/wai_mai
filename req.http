@@ -2,7 +2,6 @@ POST http://localhost:8080/orders
 Content-Type: application/json
 
 {
-  "number": "NO20261125002",
   "userId": 1003,
   "amount": 88.50,
   "remark": "少辣"

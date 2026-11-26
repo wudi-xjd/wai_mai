@@ -18,7 +18,7 @@ public class xcController {
     }
     @PostMapping("/orders")
     public Result addOrder(@RequestBody OrderDTO orderDTO){
-        xcService.addOrder(orderDTO);
-        return Result.success(orderDTO.getId());
+        Long id = xcService.addOrder(orderDTO);
+        return Result.success(id);
     }
 }

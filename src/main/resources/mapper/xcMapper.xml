@@ -8,12 +8,8 @@
         VALUES (#{number}, #{status}, #{userId}, #{amount}, #{remark}, #{createTime}, #{updateTime})
     </insert>
 
-    <!--
-        id = 接口里的方法名（大小写严格一致）
-        resultType = 返回的每行数据的类型
-        注意：这里不要写 LIMIT，分页由 PageHelper 自动拼
-    -->
-    <select id="pageOrder" resultType="java.util.Map">
+
+    <select id="pageOrder" resultType="it.Order">
         SELECT id, number, status, user_id, amount, remark, create_time, update_time
         FROM orders
         <where>
@@ -24,5 +20,6 @@
         </where>
         ORDER BY id DESC
     </select>
+
 
 </mapper>
