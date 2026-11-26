@@ -8,8 +8,6 @@ import javax.annotation.Resource;
 public class xcController {
     @Resource
     private xcService xcService;
-
-
     @GetMapping("/orders")
     public Result<PageResult> page(@RequestParam(defaultValue = "1") int page,
                                    @RequestParam(defaultValue = "10") int size){
@@ -17,5 +15,10 @@ public class xcController {
         dto.setPage(page);
         dto.setPageSize(size);
         return Result.success(xcService.pageOrder(dto));
+    }
+    @PostMapping("/orders")
+    public Result addOrder(@RequestBody OrderDTO orderDTO){
+        xcService.addOrder(orderDTO);
+        return Result.success(orderDTO.getId());
     }
 }

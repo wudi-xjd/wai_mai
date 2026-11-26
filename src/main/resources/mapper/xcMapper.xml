@@ -3,6 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace 必须是 Mapper 接口的全限定名，一处不能错，否则绑定不上 -->
 <mapper namespace="it.xcMapper">
+    <insert id="addOrder" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO orders (number, status, user_id, amount, remark, create_time, update_time)
+        VALUES (#{number}, #{status}, #{userId}, #{amount}, #{remark}, #{createTime}, #{updateTime})
+    </insert>
 
     <!--
         id = 接口里的方法名（大小写严格一致）

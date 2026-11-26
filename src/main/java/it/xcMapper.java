@@ -10,4 +10,6 @@ public interface xcMapper {
 
     /* 查询在 resources/mapper/xcMapper.xml 里，返回值类型必须跟 resultType 对上 */
     Page<Map<String, Object>> pageOrder(pageDTO pageDTO);
+
+    int addOrder(OrderDTO orderDTO);
 }
